@@ -1,0 +1,39 @@
+{
+	"author": "noname",
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js", "jquery.js", "aria2.js"]
+	},
+	"content_scripts": [{
+			"all_frames": true,
+			"js": ["content.js", "jquery.js"],
+			"matches": ["http://*/*", "https://*/*"],
+			"run_at": "document_start"
+		}
+	],
+	"browser_action": {
+		"default_title": "点击下载"
+	},
+
+	"description": "使用Aria2下载文件",
+	"icons": {
+		"128": "images/logoBig.png",
+		"16": "images/dwnlLink.png",
+		"48": "images/logoSmall.png"
+	},
+	"manifest_version": 2,
+	"minimum_chrome_version": "31.0",
+	"name": "Aria2下载助手",
+	"offline_enabled": false,
+	"permissions": [
+		"activeTab",
+		"contextMenus",
+		"notifications" ,
+		"cookies",
+		"storage",
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+	],
+	"version": "1.0"
+}
